@@ -1,14 +1,45 @@
 ---
 import Search from "lucide-astro/Search";
 import Layout from "@/layouts/Main.astro";
+import SettingsCard from "@/components/SettingsCard.astro";
+import ExternalLink from "lucide-astro/ExternalLink";
+import EyeOff from "lucide-astro/EyeOff";
+import Globe from "lucide-astro/Globe";
+import Info from "lucide-astro/Info";
+import LayoutGrid from "lucide-astro/LayoutGrid";
+import Siren from "lucide-astro/Siren";
+import SwatchBook from "lucide-astro/SwatchBook";
+
+import ArrowButton from "@/components/ArrowButton.astro";
+import Dropdown from "@/components/Dropdown.astro";
 ---
 
 <Layout>
   <div class="flex-1 flex flex-col items-center justify-center px-4">
     <h1 class="text-5xl md:text-7xl font-extrabold text-text tracking-tighter mb-12 uppercase">
-      Interstellar
+      HAH
     </h1>
     <p id="tagline" class="min-h-[1.5rem] mb-6 -mt-10 text-base md:text-lg text-text-secondary/80 tracking-wide leading-6 opacity-0 transition-opacity duration-150"></p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-5xl stagger overflow-visible relative z-[1000]">
+      <SettingsCard
+        description="Open in an about:blank tab"
+        title="About:Blank"
+        Icon={ExternalLink}
+      >
+        <div class="flex items-center justify-between gap-3">
+          <label class="flex items-center gap-3 text-sm text-text-secondary">
+            <input id="ab-toggle" type="checkbox" class="sr-only" />
+            <span id="ab-switch" class="relative inline-flex h-6 w-11 items-center rounded-full border shadow-inner transition-colors">
+              <span id="ab-knob" class="inline-block h-5 w-5 rounded-full shadow-sm transition-transform"></span>
+            </span>
+            <span id="ab-status" class="text-text-secondary">Disabled</span>
+          </label>
+        </div>
+        <div class="mt-3">
+          <ArrowButton id="AB" title="Open Popup" />
+        </div>
+      </SettingsCard>
 
     <div class="w-full max-w-2xl">
       <div class="relative">
